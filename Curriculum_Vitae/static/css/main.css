@@ -1,0 +1,23 @@
+*{
+    box-sizing: border-box;
+}
+
+.chess-board{
+    position: relative;
+    max-width: 40vw;
+    height: 40vw;
+    margin: auto;
+}
+.chess-cell{
+    position: relative;
+    float: left;
+    width: 12.5%;
+    height: 12.5%;
+    border: 1px solid black;
+}
+.black{
+    background-color: #778833;
+}
+.white{
+    background-color: #ddffaa;
+}

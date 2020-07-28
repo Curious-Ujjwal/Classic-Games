@@ -1,0 +1,18 @@
+{% extends "../base.html" %}
+
+{% block title %}Chess {% endblock %}
+
+{% block body %}
+        <div class="chess-board">
+            {% for i in cell_sum %}
+                {% if i|divisibleby:2 %}
+                <div class="chess-cell black">
+                </div>
+                {% else %}
+                <div class="chess-cell white">
+
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+{% endblock %}
