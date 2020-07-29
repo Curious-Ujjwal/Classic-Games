@@ -21,3 +21,32 @@
 .white{
     background-color: #ddffaa;
 }
+
+.table-sudoku{
+    max-width: 300px;
+    position: relative;
+    margin: auto;
+    padding: 0;
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+.td-sudoku{
+    padding: 5px;
+    border: 1px dotted black;
+}
+tr.border-top{
+    border-top: 2px solid black;
+}
+td.border-left{
+    border-left: 2px solid black;
+}
+input{
+    border: none;
+    text-align: center;
+}
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    appearance: none;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    margin: 0;
+}
