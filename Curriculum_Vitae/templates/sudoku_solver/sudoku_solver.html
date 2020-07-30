@@ -9,13 +9,16 @@
             <tr {% if i|divisibleby:3 %} class="border-top" {% endif %}>
                 {% for j in sudoku_cells %}
                 <td class="td-sudoku {% if j|divisibleby:3 %} border-left {% endif %}">
-                    <input type="number" id="cell-{{i}}-{{j}}"  placeholder=0 min=0 max=9>
+                    <input type="number" id="cell-{{i}}-{{j}}"  placeholder=0 min=0 max=9 onkeyup=bg()>
                 </td>
                 {% endfor %}
             </tr>
             {% endfor %}
     </table>
-    <button onclick = assign() >Solve</button>
+    <div class="sudoku-button-container">
+        <button onclick = assign() class="sudoku-button">Solve</button>
+        <button onclick = reset() class="sudoku-button">Reset</button>
+    </div>
     <script type="text/javascript">
         var A = new Array(9);
 
@@ -101,6 +104,16 @@
                     A[i][j]=Number(document.getElementById('cell-'+i+'-'+j).value);
                 }
             }
+            flag1 = 0;
+            var boo=0;
+            for(var i=0;i<9; i++){
+  	             for(var j=0; j<9; j++){
+                     var p=A[i][j];
+                     if(p!=0&&(!row(i,p)||!col(j,p)||!thethe(i,j,k))){
+                         return;
+                     }
+                 }
+             }
 
             solve();
 
@@ -109,7 +122,36 @@
                     document.getElementById('cell-'+i+'-'+j).value = A[i][j];
                 }
             }
+            bg();
+            return;
         }
+
+        function reset() {
+            for (var i = 0; i < 9; i++){
+                for (var j = 0; j < 9; j++){
+                    document.getElementById('cell-'+i+'-'+j).value = 0;
+                }
+            }
+            bg();
+            return;
+        }
+        function bg() {
+            for (var i = 0; i < 9; i++){
+                for (var j = 0; j < 9; j++){
+                    let ele = document.getElementById('cell-'+i+'-'+j);
+                    if (Number(ele.value) != 0) {
+                        ele.parentElement.style.backgroundColor = '#eeeeee';
+                        ele.style.backgroundColor = '#eeeeee';
+                    }
+                    else {
+                        ele.parentElement.style.backgroundColor = 'white';
+                        ele.style.backgroundColor = 'white';
+                    }
+                }
+            }
+            return ;
+        }
+
 
     </script>
 

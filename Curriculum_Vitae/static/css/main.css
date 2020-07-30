@@ -1,7 +1,10 @@
 *{
     box-sizing: border-box;
 }
-
+nav{
+    display: block;
+    color: #11dd22;
+}
 .chess-board{
     position: relative;
     max-width: 40vw;
@@ -23,7 +26,6 @@
 }
 
 .table-sudoku{
-    max-width: 300px;
     position: relative;
     margin: auto;
     padding: 0;
@@ -43,10 +45,30 @@ td.border-left{
 input{
     border: none;
     text-align: center;
+    font-size: 35px;
+    color: #222;
 }
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     appearance: none;
     -webkit-appearance:none;
     -moz-appearance:none;
     margin: 0;
+}
+.sudoku-button-container{
+    display: block;
+    margin: auto;
+    width: 500px;
+    padding-top: 50px;
+}
+.sudoku-button{
+    font-size: 30px;
+    float: left;
+    position: relative;
+    margin-right:20px;
+    left: 37%;
+    padding: 10px 15px;
+    transform: translateX(-50%);
+    background-color: #66eedd;
+    border-radius: 2px;
+    border: none;
 }
