@@ -8,6 +8,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        <nav>
+            <a href="{% url 'chess:game' %}">Chess</a>
+            <a href="{% url 'sudoku_solver:solve' %}">Solve Sudoku</a>
+        </nav>
         {% block body %}{% endblock %}
     </body>
 </html>

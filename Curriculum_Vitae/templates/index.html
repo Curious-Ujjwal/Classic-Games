@@ -1,14 +1,16 @@
-{% extends "./base.html" %}
-
-{% block title %}Quarantine Games{% endblock %}
-
-{% block body %}
-    <ol>
-        <li><a href="{% url 'chess:game' %}">Chess</a></li>
-        <li><a href="{% url 'sudoku_solver:solve' %}">Solve Sudoku</a></li>
-    </ol>
-{% endblock %}
-
-
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href='{% static "css/main.css" %}'>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <ol>
+            <li><a href="{% url 'chess:game' %}">Chess</a></li>
+            <li><a href="{% url 'sudoku_solver:solve' %}">Solve Sudoku</a></li>
+        </ol>
     </body>
 </html>
